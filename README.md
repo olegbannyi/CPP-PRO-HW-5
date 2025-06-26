@@ -29,9 +29,8 @@ Random withdraw amount: 10.00 - 200.00
 ```
 
 ## Example of results
-
 ### Thread unsafe version
-
+Console output:
 ```
 === Bank Simulation Results ===
 Initial balance: 1000.00
@@ -40,7 +39,7 @@ Total transactions: 1086
 Total transaction amount: 206988.06
 All cashiers completed work unsafely!
 ```
-Transaction records are saved in log files.
+Transaction records are saved in log files:
 ```
 build/unsafe/cachier-{1..5}.log
 ```
