@@ -18,7 +18,7 @@ safe-bank-statistics.o:
 safe-bank-account.o:
 	$(CXX) $(CXXFLAGS) -c safe/safe-bank-account.cpp -o $(BUILD_SAFE_DIR)/safe-bank-account.o
 clean-safe:
-	rm -f $(BUILD_SAFE_DIR)/*.o $(BUILD_SAFE_DIR)/*.x
+	rm -f $(BUILD_SAFE_DIR)/*.o $(BUILD_SAFE_DIR)/*.x  $(BUILD_SAFE_DIR)/*.log
 
 
 # unsafe mode
@@ -34,8 +34,8 @@ unsafe-bank-statistics.o:
 unsafe-bank-account.o:
 	$(CXX) $(CXXFLAGS) -c unsafe/unsafe-bank-account.cpp -o $(BUILD_UNSAFE_DIR)/unsafe-bank-account.o
 clean-unsafe:
-	rm -f $(BUILD_UNSAFE_DIR)/*.o $(BUILD_UNSAFE_DIR)/*.x
+	rm -f $(BUILD_UNSAFE_DIR)/*.o $(BUILD_UNSAFE_DIR)/*.x $(BUILD_UNSAFE_DIR)/*.log
 
 # general
 clean:
-	rm -f build/**/*.x build/**/*.o
+	rm -f build/**/*.x build/**/*.o build/**/*.log
