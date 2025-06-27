@@ -4,8 +4,8 @@
 class SafeBankStatistics
 {
   private:
-    std::atomic<int> transaction_count{0}; // TODO: Використайте atomic
-    std::atomic<double> total_amount{0.0}; // TODO: Використайте atomic
+    std::atomic<int> transaction_count_{0}; // TODO: Використайте atomic
+    std::atomic<double> total_amount_{0.0}; // TODO: Використайте atomic
 
   public:
     void record_transaction(double amount);

@@ -1,23 +1,25 @@
 #include "safe-bank-account.h"
+#include <mutex>
 
 void SafeBankAccount::deposit(double amount)
 {
-    if (amount > 0)
-    {
-        amount = 0;
-    }
+    std::lock_guard<std::mutex> lock(balance_mutex_);
+    balance_ += amount;
 }
 
 bool SafeBankAccount::withdraw(double amount)
 {
-    if (amount > 0)
+    std::lock_guard<std::mutex> lock(balance_mutex_);
+    if (balance_ >= amount)
     {
-        amount = 0;
+        balance_ -= amount;
+        return true;
     }
-    return true;
+    return false;
 }
 
 double SafeBankAccount::get_balance() const
 {
-    return 0.0;
+    std::lock_guard<std::mutex> lock(balance_mutex_);
+    return balance_;
 }

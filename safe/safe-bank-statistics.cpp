@@ -2,18 +2,16 @@
 
 void SafeBankStatistics::record_transaction(double amount)
 {
-    if (amount > 0)
-    {
-        amount = 0;
-    }
+    transaction_count_++;
+    total_amount_.fetch_add(amount);
 }
 
 int SafeBankStatistics::get_total_transactions() const
 {
-    return 0;
+    return transaction_count_;
 }
 
 double SafeBankStatistics::get_total_amount() const
 {
-    return 0.0;
+    return total_amount_;
 }

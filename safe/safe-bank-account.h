@@ -5,8 +5,8 @@
 class SafeBankAccount
 {
   private:
-    double balance = 1000.0;
-    mutable std::mutex balance_mutex;
+    double balance_{1000.0};
+    mutable std::mutex balance_mutex_;
 
   public:
     void deposit(double amount);

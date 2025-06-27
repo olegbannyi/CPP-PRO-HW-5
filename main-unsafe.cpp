@@ -17,13 +17,9 @@ void cashier_work(int, UnsafeBankAccount &, UnsafeBankStatistics &);
 
 int main()
 {
-    std::cout << "Thread unsafe version" << std::endl;
-
     UnsafeBankAccount account;
     UnsafeBankStatistics statistics;
     double initial_balance{account.get_balance()};
-
-    cashier_work(1, account, statistics);
 
     std::vector<std::thread> threads;
 
@@ -40,7 +36,7 @@ int main()
     std::cout << std::fixed;
     std::cout << std::setprecision(2);
 
-    std::cout << "=== Bank Simulation Results ===\n"
+    std::cout << "=== Bank Simulation Results (Unsafe) ===\n"
               << "Initial balance: " << initial_balance << "\n"
               << "Final balance: " << account.get_balance() << "\n"
               << "Total transactions: " << statistics.get_total_transactions() << "\n"
