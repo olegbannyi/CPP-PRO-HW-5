@@ -36,9 +36,9 @@ Console output:
 ```
 === Bank Simulation Results (Unsafe) ===
 Initial balance: 1000.00
-Final balance: 78630.64
-Total transactions: 920
-Total transaction amount: 177294.93
+Final balance: 42006.57
+Total transactions: 484
+Total transaction amount: 94906.65
 All cashiers completed work unsafely!
 ```
 Transaction records are saved in log files:
@@ -52,9 +52,9 @@ Console output:
 ```
 === Bank Simulation Results (Safe) ===
 Initial balance: 1000.00
-Final balance: 85745.60
-Total transactions: 1000
-Total transaction amount: 188973.59
+Final balance: 42629.91
+Total transactions: 500
+Total transaction amount: 94975.94
 All cashiers completed work safely!
 ```
 Transaction records are saved in log files:
