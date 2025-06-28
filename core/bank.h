@@ -28,5 +28,7 @@ class Bank
                 t.join();
             }
         }
+
+        threads_.clear();
     }
 };

@@ -21,7 +21,7 @@ Logger::Logger(Logger &&other) noexcept
     other.logpath_ = "";
 }
 
-Logger& Logger::operator=(Logger&& other)
+Logger &Logger::operator=(Logger &&other)
 {
     logpath_ = other.logpath_;
     ss_.clear();
@@ -36,6 +36,11 @@ Logger& Logger::operator=(Logger&& other)
     other.logpath_ = "";
 
     return *this;
+}
+
+void Logger::operator<<(const std::string &str)
+{
+    ss_ << str;
 }
 
 void Logger::flash()

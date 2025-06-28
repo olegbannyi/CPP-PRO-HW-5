@@ -7,9 +7,12 @@
 class Casher
 {
     Logger logger_;
+    bool referenceVersion_;
+    const double referenceValue_;
 
   public:
-    explicit Casher(Logger logger) : logger_(std::move(logger))
+    explicit Casher(Logger logger, bool referenceVersion = false)
+        : logger_(std::move(logger)), referenceVersion_(referenceVersion), referenceValue_(100)
     {
     }
     template <class BankAccountType, class BankStatisticsType>
@@ -24,16 +27,16 @@ class Casher
 
         for (size_t i = 0; i < 50; ++i)
         {
-            amount = dist_deposit(rng);
+            amount = referenceVersion_ ? referenceValue_ : dist_deposit(rng);
             account.deposit(amount);
             statistics.record_transaction(amount);
-            logger_.write(std::format("{:03d} deposite: {:.2f}, balance: {:.2f}\n", i, amount, account.get_balance()));
+            logger_ << std::format("{:03d} deposite: {:.2f}, balance: {:.2f}\n", i, amount, account.get_balance());
 
-            amount = dist_withdraw(rng);
+            amount = referenceVersion_ ? referenceValue_ : dist_withdraw(rng);
             succes = account.withdraw(amount);
             statistics.record_transaction(amount);
-            logger_.write(std::format("    withdraw: {:.2f}, success: {}, balance: {:.2f}\n\n", amount, succes,
-                                      account.get_balance()));
+            logger_ << std::format("    withdraw: {:.2f}, success: {}, balance: {:.2f}\n\n", amount, succes,
+                                   account.get_balance());
         }
 
         logger_.flash();
