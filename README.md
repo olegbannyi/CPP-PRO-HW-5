@@ -41,7 +41,7 @@ Total transactions: 484
 Total transaction amount: 94906.65
 All cashiers completed work unsafely!
 ```
-Transaction records are saved in log files:
+Transaction records are stored in log files:
 ```
 build/unsafe/cachier-{1..5}.log
 ```
@@ -58,7 +58,7 @@ Total transaction amount: 94975.94
 All cashiers completed work safely!
 ```
 
-Transaction records are saved in log files:
+Transaction records are stored in log files:
 ```
 build/safe/cachier-{1..5}.log
 ```
@@ -66,8 +66,8 @@ build/safe/cachier-{1..5}.log
 ## Reference mode
 To verify app correctness, run it in reference mode. Deposit and withdraw always have constant value: 100 \
 As a result:
- - initial balance should be equal to final balance (1000.00)
- - the result should be equal to the product of the number of transactions and their value \
+ - initial balance should be equal to final balance: 1000.00
+ - the result should be equal to the product of the number of cachiers and number of transactions and their value: 5 * 100 * 100.00 = 50'000.00 \
 Run in reference mode
 
 ### Thread unsafe version
