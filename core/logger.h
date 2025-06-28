@@ -6,7 +6,9 @@ class Logger
 {
     std::string logpath_;
     std::stringstream ss_;
-    bool flashed_;
+    bool finilized_;
+
+    void finilize();
 
   public:
     explicit Logger(std::string);
