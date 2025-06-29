@@ -44,7 +44,7 @@ class Casher
                                    account.get_balance());
         }
 
-        logger_.flash();
+        logger_.flush();
     }
 };
 } // namespace core

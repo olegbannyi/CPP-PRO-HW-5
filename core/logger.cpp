@@ -46,7 +46,7 @@ void Logger::operator<<(const std::string &str)
     write(str);
 }
 
-void Logger::flash()
+void Logger::flush()
 {
     if (finilized_ || logpath_.empty())
     {

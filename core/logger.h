@@ -23,7 +23,7 @@ class Logger
     void operator<<(const std::string &);
     Logger &operator=(Logger &&other);
     void write(const std::string &);
-    void flash();
+    void flush();
 };
 } // namespace core
 } // namespace banking
