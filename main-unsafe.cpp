@@ -22,11 +22,11 @@ int main(int argc, char *argv[])
 
     Bank bank;
 
-    Casher cachier1(Logger(std::format("build/unsafe/cachier-{}.log", 1)), ref_version);
-    Casher cachier2(Logger(std::format("build/unsafe/cachier-{}.log", 2)), ref_version);
-    Casher cachier3(Logger(std::format("build/unsafe/cachier-{}.log", 3)), ref_version);
-    Casher cachier4(Logger(std::format("build/unsafe/cachier-{}.log", 4)), ref_version);
-    Casher cachier5(Logger(std::format("build/unsafe/cachier-{}.log", 5)), ref_version);
+    Casher cachier1(Logger(std::format("build/cachier-unsafe-{}.log", 1)), ref_version);
+    Casher cachier2(Logger(std::format("build/cachier-unsafe-{}.log", 2)), ref_version);
+    Casher cachier3(Logger(std::format("build/cachier-unsafe-{}.log", 3)), ref_version);
+    Casher cachier4(Logger(std::format("build/cachier-unsafe-{}.log", 4)), ref_version);
+    Casher cachier5(Logger(std::format("build/cachier-unsafe-{}.log", 5)), ref_version);
 
     bank.assign<UnsafeBankAccount, UnsafeBankStatistics>(cachier1, account, statistics);
     bank.assign<UnsafeBankAccount, UnsafeBankStatistics>(cachier2, account, statistics);

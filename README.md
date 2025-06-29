@@ -7,7 +7,7 @@
 Build and run thread unsafe version
 
 ```bash
-$ make all-unsafe
+$ make BUILD=unsafe
 ```
 
 ### Thread safe version
@@ -15,7 +15,11 @@ $ make all-unsafe
 Build and run thread safe version
 
 ```bash
-$ make all-safe
+$ make
+```
+or
+```bash
+$ make BUILD=safe
 ```
 
 ## Input parameters
@@ -43,7 +47,7 @@ All cashiers completed work unsafely!
 ```
 Transaction records are stored in log files:
 ```
-build/unsafe/cachier-{1..5}.log
+build/cachier-unsafe-{1..5}.log
 ```
 
 ### Thread safe version
@@ -60,7 +64,7 @@ All cashiers completed work safely!
 
 Transaction records are stored in log files:
 ```
-build/safe/cachier-{1..5}.log
+build/cachier-safe-{1..5}.log
 ```
 
 ## Reference mode
@@ -72,11 +76,11 @@ Run in reference mode
 
 ### Thread unsafe version
 ```bash
-$ make all-unsafe-ref
+$ make BUILD=unsafe,ref
 ```
 or compiled app
 ```bash
-$ ./build/unsafe/banking.exe --ref
+$ ./build/banking-unsafe.exe --ref
 ```
 Console output:
 ```
@@ -90,11 +94,15 @@ All cashiers completed work unsafely!
 
 ### Thread safe version
 ```bash
-$ make all-safe-ref
+$ make BUILD=ref
+```
+or
+```bash
+$ make BUILD=safe,ref
 ```
 or compiled app
 ```bash
-$ ./build/safe/banking.exe --ref
+$ ./build/banking-safe.exe --ref
 ```
 Console output:
 ```

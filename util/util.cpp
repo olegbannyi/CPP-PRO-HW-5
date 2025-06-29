@@ -6,7 +6,7 @@ namespace util
 {
 bool is_reference_mode(int argc, char **argv)
 {
-    const char *refMode = "--ref";
+    const char *ref_mode = "--ref";
 
     if (argc < 2)
     {
@@ -15,7 +15,7 @@ bool is_reference_mode(int argc, char **argv)
 
     for (int i = 1; i < argc; ++i)
     {
-        if (std::strcmp(refMode, argv[i]) == 0)
+        if (std::strcmp(ref_mode, argv[i]) == 0)
         {
             return true;
         }
