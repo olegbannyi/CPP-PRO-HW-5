@@ -1,6 +1,9 @@
 #include "util.h"
 #include <cstring>
-
+namespace banking
+{
+namespace util
+{
 bool is_reference_mode(int argc, char **argv)
 {
     const char *refMode = "--ref";
@@ -20,3 +23,5 @@ bool is_reference_mode(int argc, char **argv)
 
     return false;
 }
+} // namespace util
+} // namespace banking

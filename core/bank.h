@@ -4,6 +4,12 @@
 #include <functional>
 #include <thread>
 #include <vector>
+
+namespace banking
+{
+namespace core
+{
+
 class Bank
 {
     std::vector<std::thread> threads_;
@@ -16,7 +22,8 @@ class Bank
     template <class BankAccountType, class BankStatisticsType>
     void assign(Casher &cachier, BankAccountType &account, BankStatisticsType &statistics)
     {
-        threads_.emplace_back(&Casher::work<BankAccountType, BankStatisticsType>, &cachier, std::ref(account), std::ref(statistics));
+        threads_.emplace_back(&Casher::work<BankAccountType, BankStatisticsType>, &cachier, std::ref(account),
+                              std::ref(statistics));
     }
 
     void waitAll()
@@ -32,3 +39,5 @@ class Bank
         threads_.clear();
     }
 };
+} // namespace core
+} // namespace banking

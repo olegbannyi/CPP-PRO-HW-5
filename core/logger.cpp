@@ -2,6 +2,11 @@
 #include <fstream>
 #include <string>
 
+namespace banking
+{
+namespace core
+{
+
 Logger::Logger(std::string logpath) : logpath_(std::move(logpath)), finilized_(false)
 {
 }
@@ -71,3 +76,5 @@ void Logger::finilize()
     ss_.clear();
     logpath_ = "";
 }
+} // namespace core
+} // namespace banking

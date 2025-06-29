@@ -1,5 +1,9 @@
 #include "unsafe-bank-account.h"
 
+namespace banking
+{
+namespace unsafe
+{
 void UnsafeBankAccount::deposit(double amount)
 {
     balance += amount;
@@ -19,3 +23,5 @@ double UnsafeBankAccount::get_balance() const
 {
     return balance;
 }
+} // namespace unsafe
+} // namespace banking

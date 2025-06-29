@@ -1,16 +1,19 @@
 #include "core/bank.h"
 #include "core/cashier.h"
 #include "core/logger.h"
-#include "core/util.h"
 #include "safe/safe-bank-account.h"
 #include "safe/safe-bank-statistics.h"
+#include "util/util.h"
 #include <cstdlib>
 #include <format>
 #include <iostream>
 
+using namespace banking::core;
+using namespace banking::safe;
+
 int main(int argc, char *argv[])
 {
-    const bool ref_version = is_reference_mode(argc, argv);
+    const bool ref_version = banking::util::is_reference_mode(argc, argv);
 
     SafeBankAccount account;
     SafeBankStatistics statistics;

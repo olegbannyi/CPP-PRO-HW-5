@@ -5,6 +5,7 @@ BUILD_DIR = build
 BUILD_UNSAFE_DIR = $(BUILD_DIR)/unsafe
 BUILD_SAFE_DIR = $(BUILD_DIR)/safe
 BUILD_CORE_DIR = $(BUILD_DIR)/core
+BUILD_UTIL_DIR = $(BUILD_DIR)/util
 
 # safe mode
 all-safe: clean-safe build-safe run-safe
@@ -45,8 +46,9 @@ clean-unsafe:
 # general
 core.o: clean-core
 	$(CXX) $(CXXFLAGS) -c core/logger.cpp -o $(BUILD_CORE_DIR)/logger.o
-	$(CXX) $(CXXFLAGS) -c core/util.cpp -o $(BUILD_CORE_DIR)/util.o
+	$(CXX) $(CXXFLAGS) -c util/util.cpp -o $(BUILD_CORE_DIR)/util.o
 clean-core:
 	rm -f $(BUILD_CORE_DIR)/*.o
+
 clean:
 	rm -f build/**/*.exe build/**/*.o build/**/*.log

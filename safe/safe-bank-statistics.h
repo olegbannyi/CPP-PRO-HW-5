@@ -1,6 +1,12 @@
 #pragma once
 
 #include <atomic>
+
+namespace banking
+{
+namespace safe
+{
+
 class SafeBankStatistics
 {
   private:
@@ -12,3 +18,5 @@ class SafeBankStatistics
     int get_total_transactions() const;
     double get_total_amount() const;
 };
+} // namespace safe
+} // namespace banking

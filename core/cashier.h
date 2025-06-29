@@ -4,6 +4,11 @@
 #include <chrono>
 #include <random>
 
+namespace banking
+{
+namespace core
+{
+
 class Casher
 {
     Logger logger_;
@@ -42,3 +47,5 @@ class Casher
         logger_.flash();
     }
 };
+} // namespace core
+} // namespace banking

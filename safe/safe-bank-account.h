@@ -2,6 +2,10 @@
 
 #include <mutex>
 
+namespace banking
+{
+namespace safe
+{
 class SafeBankAccount
 {
   private:
@@ -13,3 +17,5 @@ class SafeBankAccount
     bool withdraw(double amount);
     double get_balance() const;
 };
+} // namespace safe
+} // namespace banking

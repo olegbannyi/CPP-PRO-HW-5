@@ -2,6 +2,12 @@
 
 #include <sstream>
 #include <string>
+
+namespace banking
+{
+namespace core
+{
+
 class Logger
 {
     std::string logpath_;
@@ -19,3 +25,5 @@ class Logger
     void write(const std::string &);
     void flash();
 };
+} // namespace core
+} // namespace banking

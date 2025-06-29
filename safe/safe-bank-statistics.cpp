@@ -1,5 +1,9 @@
 #include "safe-bank-statistics.h"
 
+namespace banking
+{
+namespace safe
+{
 void SafeBankStatistics::record_transaction(double amount)
 {
     transaction_count_++;
@@ -15,3 +19,5 @@ double SafeBankStatistics::get_total_amount() const
 {
     return total_amount_;
 }
+} // namespace safe
+} // namespace banking

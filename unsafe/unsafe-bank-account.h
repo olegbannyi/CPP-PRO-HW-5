@@ -1,5 +1,9 @@
 #pragma once
 
+namespace banking
+{
+namespace unsafe
+{
 class UnsafeBankAccount
 {
   private:
@@ -10,3 +14,5 @@ class UnsafeBankAccount
     bool withdraw(double amount);
     double get_balance() const;
 };
+} // namespace unsafe
+} // namespace banking

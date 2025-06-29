@@ -1,5 +1,10 @@
 #pragma once
 
+namespace banking
+{
+namespace unsafe
+{
+
 class UnsafeBankStatistics
 {
   private:
@@ -11,3 +16,5 @@ class UnsafeBankStatistics
     int get_total_transactions() const;
     double get_total_amount() const;
 };
+} // namespace unsafe
+} // namespace banking

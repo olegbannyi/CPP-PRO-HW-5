@@ -1,6 +1,10 @@
 #include "safe-bank-account.h"
 #include <mutex>
 
+namespace banking
+{
+namespace safe
+{
 void SafeBankAccount::deposit(double amount)
 {
     std::lock_guard<std::mutex> lock(balance_mutex_);
@@ -23,3 +27,6 @@ double SafeBankAccount::get_balance() const
     std::lock_guard<std::mutex> lock(balance_mutex_);
     return balance_;
 }
+
+} // namespace safe
+} // namespace banking
